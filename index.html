@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Presentes de Casamento</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #fde2e4, #fec8d8);
+      color: #2d3748;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #b83280;
+      margin-bottom: 10px;
+    }
+    header h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.125rem;
+      color: #718096;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .gifts-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gift-card {
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .gift-card:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    .gift-image {
+      width: 100%;
+      height: auto;
+    }
+    .gift-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #ec4899;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .gift-button:hover {
+      background-color: #db2777;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+    .modal.open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .modal-content img {
+      width: 90%;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    .modal-close {
+      margin-top: 20px;
+      cursor: pointer;
+      color: #ec4899;
+      text-decoration: underline;
+    }
+    .pix-code-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .pix-code-text {
+      font-size: 1rem;
+      color: #2d3748;
+    }
+    .copy-button {
+      padding: 5px 10px;
+      background-color: #ec4899;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .copy-button:hover {
+      background-color: #db2777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Édelin & Gabriel</h1>
+    <h2>Lista de Presentes de Casamento</h2>
+    <p>Sua presença é o maior presente, mas se desejar nos presentear, ficaremos honrados com sua contribuição para o início de nossa vida a dois.</p>
+  </header>
+
+  <main>
+    <div class="gifts-container">
+      <!-- Cartões de presentes -->
+      <div class="gift-card">
+        <img class="gift-image" src="images/1.png" alt="Presente 1">
+        <a href="#" class="gift-button" onclick="openModal(1)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/2.png" alt="Presente 2">
+        <a href="#" class="gift-button" onclick="openModal(2)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/3.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/4.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/5.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/6.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/7.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/8.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/9.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/10.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/11.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/12.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/13.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/14.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/15.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/16.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/17.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/18.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/19.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/20.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <div class="gift-card">
+        <img class="gift-image" src="images/21.png" alt="Presente 3">
+        <a href="#" class="gift-button" onclick="openModal(3)">Presentear</a>
+      </div>
+      <!-- Repetir a estrutura acima para outros presentes -->
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="gift-modal">
+    <div class="modal-content">
+      <h3>Contribuir com o Presente</h3>
+      <p>Você escolheu contribuir com o presente:</p>
+      <img src="/assets/qr.jpg" alt="QR Code Pix", height="600">
+      <p>Escaneie o QR Code ou use o código Pix abaixo:</p>
+      <div class="pix-code-container">
+        <span class="pix-code-text">074.017.901-22</span>
+        <button class="copy-button" onclick="copyToClipboard('074.017.901-22')">Copiar</button>
+      </div>
+      <div class="modal-close" onclick="closeModal()">Fechar</div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(giftId) {
+      document.getElementById('gift-modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('gift-modal').classList.remove('open');
+    }
+
+    function copyToClipboard(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("Código Pix copiado!");
+    }
+  </script>
+</body>
+</html>
