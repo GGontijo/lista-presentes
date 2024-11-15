@@ -1,10 +1,10 @@
 "'use client'"
 
-import { Check, Copy, Heart } from "'lucide-react'"
-import { useState } from "'react'"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Check, Copy, Heart } from "lucide-react"
+import { useState } from "react"
 
 const totalGifts = 24
 
