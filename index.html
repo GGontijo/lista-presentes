@@ -34,16 +34,22 @@
       margin: 0 auto;
     }
     .gifts-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os itens */
+    justify-content: center; /* Centraliza os itens na linha */
     }
     .gift-card {
-      background: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: box-shadow 0.3s;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Aumentei um pouco a sombra para dar um efeito mais sutil */
+    border-radius: 12px; /* Aumentei o raio de arredondamento para tornar o visual mais amigável */
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s; /* Adicionei uma transição para o efeito de escala */
+    max-width: calc(30%); /* Limita o tamanho para 4 itens por linha */
+    }
+    .gift-card:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumentei a sombra ao passar o mouse para dar mais destaque */
+      transform: translateY(-5px); /* Adicionei um leve efeito de elevação ao passar o mouse */
     }
     .gift-card:hover {
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
@@ -231,7 +237,7 @@
     <div class="modal-content">
       <h3>Contribuir com o Presente</h3>
       <p>Você escolheu contribuir com o presente:</p>
-      <img src="/assets/qr.jpg" alt="QR Code Pix", height="600">
+      <img src="assets/qr.jpg" alt="QR Code Pix", height="600">
       <p>Escaneie o QR Code ou use o código Pix abaixo:</p>
       <div class="pix-code-container">
         <span class="pix-code-text">074.017.901-22</span>
